@@ -1,1 +1,1 @@
-# This repository contains Machine Learning and Data Analysis Projects.
+# This repository contains Machine Learning and Data Analysis projects.
