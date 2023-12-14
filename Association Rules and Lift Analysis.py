@@ -6,25 +6,12 @@
 
 #imports
 import pandas as pd
-
 import numpy as np
-
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
-
 import seaborn as sns
-
-import mlxtend
-from mlxtend.frequent_patterns import apriori
-from mlxtend.frequent_patterns import association_rules
-
-import apyori
+from mlxtend.frequent_patterns import apriori, association_rules
 from apyori import apriori
-
-import yellowbrick
 from yellowbrick.cluster import KElbowVisualizer
-
-
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -32,8 +19,9 @@ warnings.filterwarnings('ignore')
 # In[19]:
 
 
-#read csv
-df= pd.read_csv('teleco_market_basket.csv')
+# Read CSV dynamically
+file_path = 'teleco_market_basket.csv'
+raw_data = pd.read_csv(teleco_market_basket.csv)
 
 
 # In[20]:
