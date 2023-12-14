@@ -8,30 +8,19 @@
 import numpy as np
 import pandas as pd
 from pandas import Series, DataFrame
-
 import seaborn as sns
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-import sklearn
-from sklearn import datasets, linear_model
-from sklearn import preprocessing
+%matplotlib inline
+from sklearn import datasets, linear_model, preprocessing, metrics
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn import metrics
-from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import cross_val_score
-from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error as MSE
-from sklearn.metrics import mean_absolute_error as MAE
-from sklearn.ensemble import BaggingClassifier
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import roc_auc_score, classification_report, confusion_matrix
+from sklearn.model_selection import cross_val_score, train_test_split, GridSearchCV
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, BaggingClassifier
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -99,7 +88,7 @@ df.dtypes
 
 
 #dummy variables for categorical data 
-df = pd.get_dummies(df)
+df = pd.get_dummies(df, drop_first=True)
 
 
 # In[562]:
@@ -453,25 +442,7 @@ cv_scores = cross_val_score(logreg, X, y, cv=5, scoring='roc_auc')
 print("AUC cross-val score: {}".format(cv_scores))
 
 
-# In[ ]:
 
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
